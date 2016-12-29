@@ -178,7 +178,7 @@ date_df['response_next_batch'][(date_df['batch_last'] == 1)] = 0
 
 
 # weekday = Day of the week when the observation was taken
-# 0.01 == 6 mins
+# 0.01 == 6 mins -- Picked up from one of the forum discussions
 date_df ['day'] = (((date_df['starttime']/0.01)*6)/60)/24
 date_df['actual_day'] = date_df.day.apply(np.ceil)
 date_df['weekday'] = date_df['actual_day'].map(lambda x: 7 if x % 7 == 0 else x % 7)
